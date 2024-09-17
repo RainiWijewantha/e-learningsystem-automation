@@ -70,8 +70,31 @@ public class AdminUser {
 		WebElement save = chromeDriver.findElement(By.xpath("//button[normalize-space()='Save']"));
 		save.click();
 		Thread.sleep(5000);
+
+		//edit
+		WebElement edit = chromeDriver.findElement(By.xpath("(//a[@title='Edit'][normalize-space()='Edit'])[2]"));
+		edit.click();
+		Thread.sleep(5000);
+
+		//password
+		WebElement password1 = chromeDriver.findElement(By.xpath("//input[@id='user_pass']"));
+		password1.sendKeys("123456");
+		Thread.sleep(5000);
+
+		//retype password
+		WebElement retype_password1 = chromeDriver.findElement(By.xpath("//input[@id='retype_user_pass']"));
+		retype_password1.sendKeys("123456");
+		Thread.sleep(5000);
 		
+		//update
+		WebElement update = chromeDriver.findElement(By.xpath("//button[@id='usersave']"));
+		update.click();
+		Thread.sleep(5000);
 		
+		//delete
+		WebElement delete = chromeDriver.findElement(By.cssSelector("tr[class='even'] a[title='Delete']"));
+		delete.click();
+		Thread.sleep(5000);
 	}
 
 }
