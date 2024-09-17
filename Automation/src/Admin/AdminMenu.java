@@ -45,6 +45,11 @@ public class AdminMenu {
 		WebElement lesson = chromeDriver.findElement(By.xpath("(//a[@href='/e-learningsystem/admin/modules/lesson/index.php'])[1]"));
 		lesson.click();
 		Thread.sleep(5000);
+		
+		//exercises
+		WebElement exercise = chromeDriver.findElement(By.xpath("(//a[@href='/e-learningsystem/admin/modules/exercises/index.php'])[1]"));
+		exercise.click();
+		Thread.sleep(5000);
 
 		//gallery
 		WebElement gallery = chromeDriver.findElement(By.xpath("//a[normalize-space()='Gallery']"));
