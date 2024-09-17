@@ -74,10 +74,49 @@ public class AdminLesson {
 		Thread.sleep(5000);
 		
 		//edit lesson details
-		WebElement edit = chromeDriver.findElement(By.xpath("//a[contains(text(),'Edit')]"));
+		WebElement edit = chromeDriver.findElement(By.cssSelector("tbody tr:nth-child(1) td:nth-child(4) a:nth-child(1)"));
 		edit.click();
 		Thread.sleep(5000);
+		
+		//edit chapter
+		WebElement chapter_edit = chromeDriver.findElement(By.xpath("(//input[@id='LessonChapter'])[1]"));
+		chapter_edit.clear();
+		chapter_edit.sendKeys("Chapter 1");
+		Thread.sleep(5000);
+		
+		//save changes
+		WebElement save_changes = chromeDriver.findElement(By.xpath("//button[normalize-space()='Save']"));
+		save_changes.click();
+		Thread.sleep(5000);
+		
+		//edit file
+		WebElement edit_file = chromeDriver.findElement(By.xpath("(//a[contains(@title,'Change File')][normalize-space()='Change File'])[1]"));
+		edit_file.click();
+		Thread.sleep(5000);
 
+		WebElement file1 = chromeDriver.findElement(By.xpath("(//input[@name='file'])[1]"));
+		filePath = "E:\\ICBT - BSc\\Final Project\\Chapter 11.docx";
+		file1.sendKeys(filePath);
+		Thread.sleep(5000);
+		
+		WebElement save1 = chromeDriver.findElement(By.xpath("//button[normalize-space()='Save']"));
+		save1.click();
+		Thread.sleep(5000);
+		
+		//view
+		WebElement view = chromeDriver.findElement(By.xpath("(//a[@title='View Files'][normalize-space()='View'])[1]"));
+		view.click();
+		Thread.sleep(5000);
+		
+		//lesson
+		WebElement lesson1 = chromeDriver.findElement(By.xpath("(//a[@href='/e-learningsystem/admin/modules/lesson/index.php'])[1]"));
+		lesson1.click();
+		Thread.sleep(5000);
+		
+		//delete 
+		WebElement delete = chromeDriver.findElement(By.xpath("(//a[@title='Delete'][normalize-space()='Delete'])[1]"));
+		delete.click();
+		Thread.sleep(5000);
 	}
 
 }
