@@ -1,13 +1,11 @@
 package Admin;
 
-import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AdminLesson {
 
@@ -25,8 +23,6 @@ public class AdminLesson {
 		String baseURL = "http://localhost:8080/e-learningsystem/admin/login.php";
 		chromeDriver.get(baseURL);
 		Thread.sleep(5000);
-
-		WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(2000));
 		
 		//login
 		WebElement username3 = chromeDriver.findElement(By.xpath("//input[@id='email']"));
@@ -40,6 +36,8 @@ public class AdminLesson {
 		WebElement login_btn3 = chromeDriver.findElement(By.xpath("//button[normalize-space()='Log In']"));
 		login_btn3.click();
 		Thread.sleep(5000);
+		
+		//
 
 	}
 
